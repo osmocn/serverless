@@ -1,0 +1,28 @@
+{
+  "name": "@grove/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./item-controller": "./src/controller/item.ts"
+  },
+  "scripts": {
+    "build": "pnpm typecheck",
+    "db:check": "drizzle-kit check:pg",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "db:generate": "drizzle-kit generate --config drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config drizzle.config.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.3",
+    "drizzle-kit": "^0.31.6",
+    "typescript": "^5"
+  }
+}
