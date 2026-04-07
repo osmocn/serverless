@@ -3,13 +3,15 @@
   "private": true,
   "packageManager": "pnpm@10.25.0",
   "scripts": {
-    "dev": "turbo dev",
-    "dev:api": "pnpm --filter hono dev",
+    "dev": "turbo dev --filter=@grove/api",
     "build": "turbo build",
-    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "lint": "biome check .",
     "format": "biome format --write .",
-    "docker:up": "docker compose up -d",
-    "docker:down": "docker compose down --volumes --remove-orphans"
+    "db:check": "pnpm --filter @grove/db db:check",
+    "db:generate": "pnpm --filter @grove/db db:generate",
+    "db:migrate": "pnpm --filter @grove/db db:migrate",
+    "db:studio": "pnpm --filter @grove/db db:studio"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",

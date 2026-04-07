@@ -1,11 +1,16 @@
 {
-  "name": "hono",
+  "name": "@grove/api",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "dependencies": {
-    "hono": "^4.8.9"
-  },
   "scripts": {
-    "dev:node": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@grove/db": "workspace:*",
+    "hono": "^4.8.9"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
