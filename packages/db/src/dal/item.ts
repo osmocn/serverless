@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
-import db from "../db";
-import { items } from "../schema";
+import db from "../db.js";
+import { items } from "../schema/index.js";
 
 export const itemDal = {
   async create(data: { title: string }) {

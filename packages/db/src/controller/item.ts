@@ -1,10 +1,10 @@
-import { itemDal } from "../dal/item";
+import { itemDal } from "../dal/item.js";
 import {
   BadRequestError,
   ConflictError,
   InternalError,
   NotFoundError,
-} from "../helpers/errors";
+} from "../helpers/errors.js";
 
 function normalizeTitle(title: string) {
   return title.trim();

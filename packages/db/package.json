@@ -4,11 +4,17 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./item-controller": "./src/controller/item.ts"
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./item-controller": {
+      "types": "./src/controller/item.ts",
+      "import": "./dist/controller/item.js"
+    }
   },
   "scripts": {
-    "build": "pnpm typecheck",
+    "build": "tsc --project tsconfig.build.json",
     "db:check": "drizzle-kit check:pg",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "db:generate": "drizzle-kit generate --config drizzle.config.ts",
